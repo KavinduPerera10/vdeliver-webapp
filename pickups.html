@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="C:\Users\Pamoda Jayasekera\vdelivery\stylesheet\style2.css" rel="stylesheet" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+#myInput {
+  position: absolute;
+  top:33%;
+  left: 20%;
+  width:24%;
+  height:4%;
+  font-size: 14px;
+  padding: 10px 15px 10px 30px;
+  margin-bottom:8px;
+}
+#myTable {
+  border-collapse: collapse;
+  width: 70%;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  height: 50%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  background-color: white;
+}
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+    img { 
+    position: absolute;
+    top:2.6%;
+    left:2%;
+    width: 60px;
+  height: 52px;
+    } 
+ 
+    ul{
+    position: absolute;
+    top:15%;
+    }
+  </style>
+</head>
+<body>
+ <img src="x1.PNG" alt="logo"> 
+ <p id="rcorners1"></p> 
+ <p id="rcorners2"></p> 
+ <ul>
+  <li><a href=".\dashboard.html">Dashboard</a></li> 
+  <li><a href=".\deliveries.html">Deliveries</a></li>
+  <li><a href=".\pickups.html">Pickups</a></li>
+  <li><a href=".\vehicles.html">Vehicles</a></li>
+  <li><a href=".\wallet.html">Wallet</a></li>
+  <li><a href=".\profiles.html">Profiles</a></li>
+  <li><a href=".\customers.html">Customers</a></li> 
+  <li><a href=".\newDeliveries.html">Add Orders</a></li>
+  </ul>
+  <div class="square1">
+    <div class="content">       
+         11<br><br>
+            All
+    </div>
+</div>
+<div class="square2">
+    <div class="content">       
+         4<br><br>
+            Pending
+    </div>
+</div>
+<div class="square3">
+    <div class="content">       
+         4<br><br>
+            Completed
+    </div> 
+    </div>
+
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Drivers" title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+        <th>Order Id</th>
+        <th>Ref</td>
+        <th>Status</th>
+        <th>Address</th>
+        <th>Driver Id</th> 
+        <th>Mobile Number</th>  
+        <th>Total</th>       
+      </tr>
+    <tbody>
+      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
+     
+    </tbody>
+  </table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>

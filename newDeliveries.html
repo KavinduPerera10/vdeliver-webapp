@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="C:\Users\Pamoda Jayasekera\vdelivery\stylesheet\style3.css" rel="stylesheet" >
+  <style>
+    img { 
+    position: absolute;
+    top:2.6%;
+    left:2%;
+    width: 60px;
+  height: 52px;
+    } 
+ 
+    ul{
+    position: absolute;
+    top:15%;
+    } 
+    p1{
+        font-size:25px;
+        color: white;
+        position:absolute;
+        top:10%;
+        left:25%;
+    } 
+    p8{
+      font-size:15px;
+      font-style:'Poppins' ;
+      position: absolute;
+      top:21%;
+      left:19.5%;
+      color: #17224D;
+      font-style: bold;
+    } 
+    p9{
+      font-size:15px;
+      font-style:'Poppins' ;
+      position: absolute;
+      top:-200%;
+      left:-15%;
+      color: #17224D;
+      font-style: bold;
+    } 
+    p10{
+      font-size:15px;
+      font-style:'Poppins' ;
+      position: absolute;
+      top:80%;
+      left:-15%;
+      color: #17224D;
+      font-style: bold;
+    } 
+    
+   
+  </style> 
+</head>
+<body>
+ <img src="x1.PNG" alt="logo"> 
+ <p id="rcorners1"></p> 
+ <p id="rcorners2"></p> 
+ <ul>
+  <li><a href=".\dashboard.html">Dashboard</a></li> 
+  <li><a href=".\deliveries.html">Deliveries</a></li>
+  <li><a href=".\pickups.html">Pickups</a></li>
+  <li><a href=".\vehicles.html">Vehicles</a></li>
+  <li><a href=".\wallet.html">Wallet</a></li>
+  <li><a href=".\profiles.html">Profiles</a></li>
+  <li><a href=".\customers.html">Customers</a></li> 
+  <li><a href=".\newDeliveries.html">Add Orders</a></li>  
+  </ul> 
+  <px>Add Order</px>
+  <p8>order details</p8>
+  <div id="container">
+
+    <span class="input">
+      <input type="text" class="input__field" id="input-1" />
+      <label for="input-1" class="input__label">
+        <span class="input__label-content">Order Ref</span>
+    </label>
+    </span>
+  
+    <span class="input">
+      <input type="text" class="input__field" id="input-2" />
+      <label for="input-2" class="input__label">
+        <span class="input__label-content">Delivery Type</span>
+      </label>
+    </span>
+  <br>
+    <span class="input">
+      <input type="text" class="input__field" id="input-3" />
+      <label for="input-3" class="input__label">
+        <span class="input__label-content">Pick Up Address</span>
+      </label>
+    </span>
+    <span class="input">
+      <input type="text" class="input__field" id="input-4" />
+      <label for="input-4" class="input__label">
+        <span class="input__label-content">Mobile Number</span>
+      </label>
+    </span> 
+    <p9>Receiver</p9>
+    <span class="input">
+      <input type="text" class="input__field" id="input-5" />
+      <label for="input-5" class="input__label">
+        <span class="input__label-content">Receiver</span>
+      </label>
+    </span>
+  
+    <span class="input">
+      <input type="text" class="input__field" id="input-6" />
+      <label for="input-6" class="input__label">
+        <span class="input__label-content">Delivery Address</span>
+      </label>
+    </span> 
+    <span class="input">
+      <input type="text" class="input__field" id="input-8" />
+      <label for="input-8" class="input__label">
+        <span class="input__label-content">Receiver Phone No</span>
+      </label>
+    </span> 
+
+    <p10>Payment Details</p10>
+    
+    <span class="input">
+      <input type="text" class="input__field" id="input-9" />
+      <label for="input-9" class="input__label">
+        <span class="input__label-content">Payment Type</span>
+      </label>
+    </span>
+  
+    <span class="input">
+      <input type="text" class="input__field" id="input-10" />
+      <label for="input-10" class="input__label">
+        <span class="input__label-content">Delivery Charges</span>
+      </label>
+    </span> 
+    <span class="input">
+      <input type="text" class="input__field" id="input-11" />
+      <label for="input-11" class="input__label">
+        <span class="input__label-content">Total (LKR)</span>
+      </label>
+    </span> 
+    
+  
+    <span class="input message">
+      <textarea class="input__field" id="input-7"></textarea>
+      <label for="input-7" class="input__label">
+        <span class="input__label-content">Note</span>
+      </label>
+    </span>
+  
+    <button id="send-button" type="button">Create Order</button> <br>
+    <button id="send-button" type="button">Reset</button> 
+  </div>
+  </div>
+</body>
+</html>

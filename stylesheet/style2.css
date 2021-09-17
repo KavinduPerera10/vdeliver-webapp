@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,500,700,800);
+body {
+    background-color: #7FBEFF;
+}
+  ul {
+    list-style-type: none;
+    width:199px;
+    height:700px;
+    background-color:#17224D;
+    margin:0px;
+    padding:0px;
+  }
+  
+  li a {
+    display: block;
+    color:white;
+    padding:28px 28px;
+    text-decoration:none;
+  }
+  
+  li a.active {
+    background-color:white;
+    color: #17224D;
+  }
+  
+  li a:hover:not(.active) {
+    background-color:white;
+    color: #17224D;
+  }
+  a{
+      font-size: 23px;
+      font-family:'Dosis';
+  } 
+ 
+  #rcorners1 {
+    background: white; 
+    width:100%;
+    height:53px; 
+  } 
+  #rcorners2 {
+    background: #17224D;
+    position: absolute;
+    top:7.1%;
+    width:13.12%;
+    height:42px; 
+  } 
+  .pie-chart {
+    background:
+      radial-gradient(
+        circle closest-side,
+        transparent 66%,
+        white 0
+      ),
+      conic-gradient(
+        #007FFF 0,
+        #007FFF 70%,
+        #7FBEFF 0,
+        #7FBEFF 30%
+    );
+    position:relative;
+    top: 20%;
+    left:15%;
+    width:200px;
+    min-height:150px;
+    float:left;
+    padding-bottom :6%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-color:#1E1E1E;
+    overflow:hidden;
+    border-radius:15px;
+  }
+  .pie-chart h2 {
+    position: absolute;
+    margin: 1rem;
+  }
+  .pie-chart cite {
+    position: absolute;
+    bottom: 0;
+    font-size: 80%;
+    padding: 1rem;
+    color: gray;
+  }
+  .pie-chart figcaption {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    font-size: smaller;
+    text-align: right;
+  }
+  .pie-chart span:after {
+    display: inline-block;
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0.4em;
+    height: 0.8em;
+    border-radius: 0.2em;
+    background: currentColor;
+  }
+ 
+  .square1 {
+    float:left;
+    position:relative;
+    left: 20%;
+    width:8%;
+    padding-bottom :7%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-color:#1E1E1E;
+    overflow:hidden;
+    border-radius: 20px;
+    font-size:20px;
+    font-family: 'Lato',verdana, sans-serif;
+    color: #fff;
+    text-align:center;
+    
+    
+} 
+.square2 {
+  float:left;
+  position:relative;
+  left: 20%;
+  width:8%;
+  padding-bottom :7%; /* = width for a 1:1 aspect ratio */
+  margin:1.66%;
+  background-color:#1e1e1ec4;
+  overflow:hidden;
+  border-radius: 20px;
+  font-size:20px;
+  font-family: 'Lato',verdana, sans-serif;
+  color: #fff;
+  text-align:center;
+  
+}
+.square3 {
+  float:left;
+  position:relative;
+  left: 20%;
+  width:8%;
+  padding-bottom :7%; /* = width for a 1:1 aspect ratio */
+  margin:1.66%;
+  background-color:#1e1e1e91;
+  overflow:hidden;
+  border-radius: 20px;
+  font-size:20px;
+  font-family: 'Lato',verdana, sans-serif;
+  color: #fff;
+  text-align:center;
+  
+}
+.square4 {
+  float:left;
+  position:relative;
+  left:43%;
+  width:8%;
+  padding-bottom :7%; /* = width for a 1:1 aspect ratio */
+  margin:1.66%;
+  background-color:#7b9fcf91;
+  overflow:hidden;
+  border-radius: 20px;
+  font-size:20px;
+  font-family: 'Lato',verdana, sans-serif;
+  color: black;
+  text-align:center;
+  
+}
+.square5 {
+  float:left;
+  position:relative;
+  left:45%;
+  width:8%;
+  padding-bottom :7%; /* = width for a 1:1 aspect ratio */
+  margin:1.66%;
+  background-color:#a6bddb91;
+  overflow:hidden;
+  border-radius: 20px;
+  font-size:20px;
+  font-family: 'Lato',verdana, sans-serif;
+  color: black;
+  text-align:center;
+  
+}
+
+
+.content {
+    position:absolute;
+    height:10%; /* = 100% - 2*5% padding */
+    width:50%; /* = 100% - 2*5% padding */
+    padding:5%;   
+}
+
+#bottom {
+    clear:both;
+    margin:0 1.66%;
+    width:89.68%;
+    padding: 3.5%;
+    background-color:#1E1E1E;
+    color: #fff;
+}
+
+    #underline1{
+      font-size: 20px;
+      position:absolute;
+      top:34%;
+      left:20.5%;
+      
+    } 
+    #underline2{
+      font-size: 18px;
+      position:absolute;
+      top:34%;
+      left:70.5%;
+      
+    } 
+   
