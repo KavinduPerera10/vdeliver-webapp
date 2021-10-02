@@ -199,7 +199,7 @@ textarea {
   transform: translate3d(0, 0.5em, 0);
 }
 
-#send-button {
+#send-button1 {
   width: 200px;
   height: 60px;
   background-color: #17224D;
@@ -213,8 +213,30 @@ textarea {
   transition: transform 0.3s;
 }
 
-#send-button:hover,
-#send-button:focus {
+#send-button1:hover,
+#send-button1:focus {
+  outline: 0;
+  background-color: white;
+  color:#17224D;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+} 
+#send-button2 {
+  width: 200px;
+  height: 60px;
+  background-color: #17224D;
+  color: white;
+  border: 0;
+  font-weight: bold;
+  font-size: 70.25%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+#send-button2:hover,
+#send-button2:focus {
   outline: 0;
   background-color: white;
   color:#17224D;

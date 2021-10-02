@@ -1,7 +1,10 @@
+
 <!DOCTYPE html>
+
 <html>
 <head>
-  <link href="C:\Users\Pamoda Jayasekera\vdelivery\stylesheet\style3.css" rel="stylesheet" >
+  <link href="C:\Users\Pamoda Jayasekera\vdelivery\stylesheet\style3.css" rel="stylesheet" > 
+
   <style>
     img { 
     position: absolute;
@@ -52,8 +55,11 @@
     
    
   </style> 
+ 
 </head>
+
 <body>
+  
  <img src="x1.PNG" alt="logo"> 
  <p id="rcorners1"></p> 
  <p id="rcorners2"></p> 
@@ -72,48 +78,49 @@
   <div id="container">
 
     <span class="input">
-      <input type="text" class="input__field" id="input-1" />
-      <label for="input-1" class="input__label">
-        <span class="input__label-content">Order Ref</span>
-    </label>
+      <input type="text" class="input__field" id="oderref" />
+      <label for="oderref" class="input__label">
+        <span class="input__label-content">oderref</span>
+      </label>
     </span>
+ 
   
     <span class="input">
-      <input type="text" class="input__field" id="input-2" />
-      <label for="input-2" class="input__label">
+      <input type="text" class="input__field" id="deliverytype" />
+      <label for="deliverytype" class="input__label">
         <span class="input__label-content">Delivery Type</span>
       </label>
     </span>
   <br>
     <span class="input">
-      <input type="text" class="input__field" id="input-3" />
-      <label for="input-3" class="input__label">
+      <input type="text" class="input__field" id="pickupadd" />
+      <label for="pickupadd" class="input__label">
         <span class="input__label-content">Pick Up Address</span>
       </label>
     </span>
     <span class="input">
-      <input type="text" class="input__field" id="input-4" />
-      <label for="input-4" class="input__label">
+      <input type="text" class="input__field" id="mobilenum" />
+      <label for="mobilenum" class="input__label">
         <span class="input__label-content">Mobile Number</span>
       </label>
     </span> 
     <p9>Receiver</p9>
     <span class="input">
-      <input type="text" class="input__field" id="input-5" />
-      <label for="input-5" class="input__label">
+      <input type="text" class="input__field" id="receiver" />
+      <label for="receiver" class="input__label">
         <span class="input__label-content">Receiver</span>
       </label>
     </span>
   
     <span class="input">
-      <input type="text" class="input__field" id="input-6" />
-      <label for="input-6" class="input__label">
+      <input type="text" class="input__field" id="deliveryadd" />
+      <label for="deliveryadd" class="input__label">
         <span class="input__label-content">Delivery Address</span>
       </label>
     </span> 
     <span class="input">
-      <input type="text" class="input__field" id="input-8" />
-      <label for="input-8" class="input__label">
+      <input type="text" class="input__field" id="receiverphone" />
+      <label for="receiverphone" class="input__label">
         <span class="input__label-content">Receiver Phone No</span>
       </label>
     </span> 
@@ -121,36 +128,80 @@
     <p10>Payment Details</p10>
     
     <span class="input">
-      <input type="text" class="input__field" id="input-9" />
-      <label for="input-9" class="input__label">
+      <input type="text" class="input__field" id="paymenttype" />
+      <label for="paymenttype" class="input__label">
         <span class="input__label-content">Payment Type</span>
       </label>
     </span>
   
     <span class="input">
-      <input type="text" class="input__field" id="input-10" />
-      <label for="input-10" class="input__label">
+      <input type="text" class="input__field" id="deliverycharges" />
+      <label for="deliverycharges" class="input__label">
         <span class="input__label-content">Delivery Charges</span>
       </label>
     </span> 
     <span class="input">
-      <input type="text" class="input__field" id="input-11" />
-      <label for="input-11" class="input__label">
+      <input type="text" class="input__field" id="total" />
+      <label for="total" class="input__label">
         <span class="input__label-content">Total (LKR)</span>
       </label>
     </span> 
     
   
     <span class="input message">
-      <textarea class="input__field" id="input-7"></textarea>
-      <label for="input-7" class="input__label">
+      <textarea class="input__field" id="note"></textarea>
+      <label for="note" class="input__label">
         <span class="input__label-content">Note</span>
       </label>
     </span>
   
-    <button id="send-button" type="button">Create Order</button> <br>
-    <button id="send-button" type="button">Reset</button> 
+    <button id="insert" onclick="save()"> Insert </button>
+    <button id="select"> Select </button>
+    <button id="update"> Update </button>
+    <button id="delete"> Delete </button>
+
+   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js"></script> 
   </div>
-  </div>
-</body>
+  </div> 
+<script type="module" id="MainScript">
+    const firebaseConfig = {
+    apiKey: "AIzaSyCNbCBIQ-E9kuFR6XpWAKlw7DRiwY8TMmo",
+    authDomain: "firstjs-5674b.firebaseapp.com",
+    projectId: "firstjs-5674b",
+    storageBucket: "firstjs-5674b.appspot.com",
+    messagingSenderId: "878484993281",
+    appId: "1:878484993281:web:8835fac2f81aa52d4b9700"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+//-------------------Ready Data--------------------//
+var oderref,deliverytype, pickupadd;
+function Ready()
+{
+  oderref= document.getElementById('oderref').value;
+  deliverytype= document.getElementById('deliverytype').value;
+  pickupadd= document.getElementById('pickupadd').value;
+}
+//-----------------Insert------------------------//
+document.getElementById('insert').onclick = function()
+{
+Ready();
+firebase.database().ref('vdelivery/'+oderref).set({
+  OderRef: oderref,
+  DeliveryType: deliverytype,
+  PickUpAdd : pickupadd
+});
+}
+
+
+
+
+</script>
+</body>  
+
+
 </html>

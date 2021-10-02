@@ -1,73 +1,22 @@
-(function() {
+import{initializeApp} from 'firebase/app';
+const firebase = initializeApp({
+    apiKey: "AIzaSyCNbCBIQ-E9kuFR6XpWAKlw7DRiwY8TMmo",
+    authDomain: "firstjs-5674b.firebaseapp.com",
+    projectId: "firstjs-5674b",
+    storageBucket: "firstjs-5674b.appspot.com",
+    messagingSenderId: "878484993281",
+    appId: "1:878484993281:web:8835fac2f81aa52d4b9700"
+}); 
 
-    var app = angular.module('timesheet', ["ngAnimate"]);
-  
-    app.controller('FormController', function($scope, $timeout) {
-  
-      $scope.ele = {
-        email: "",
-        time: {
-          hours: "",
-          mins: ""
-        },
-        msg: "",
-        selectTypes: [
-          "Time working on visual effects for movie"
-        ]
-      };
-  
-      var defaultForm = angular.copy($scope.ele);
-  
-      $scope.clearInfo = function() {
-  
-        $scope.ele = angular.copy(defaultForm);
-        $scope.formTimesheet.$setPristine();
-        $scope.selectedItems = '';
-        $scope.newType = '';
-  
-        document.getElementsByName('formTimesheet')[0].reset();
-        var elements = document.getElementById("dropDown").options;
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].selected = false;
-        }
-  
-      };
-  
-      $scope.createNew = function(newType) {
-  
-        if (newType) {
-          if (newType.length !== 0) {
-            $scope.ele.selectTypes.push(newType);
-          }
-  
-          $scope.newType = '';
-        }
-  
-      };
-  
-      $scope.saveForm = function() {
-        $scope.clicked = true;
-  
-        $timeout(function() {
-          $scope.success = true;
-        }, 1400);
-  
-      };
-  
-      $scope.startAgain = function() {
-  
-        if ($scope.clicked === true) {
-          $scope.clicked = false;
-        }
-  
-        if ($scope.success === true) {
-          $scope.success = false;
-        }
-  
-        $scope.clearInfo();
-  
-      };
-  
-    });
-  
-  })();
+
+
+
+
+
+const oderref =document.getElementById("oderref");
+const deliverytype = document.getElementById("deliverytype");
+const pickupadd = document.getElementById("pickupadd");
+const mobilenum =document.getElementById("mobilenum");
+const receiver =document.getElementById("receiver"); 
+
+const database= firstbase.database();
