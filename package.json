@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "firebase": "^9.1.1"
+  },
+  "name": "exit",
+  "version": "1.0.0",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pamoda-Jayasekera/vdelivery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pamoda-Jayasekera/vdelivery/issues"
+  },
+  "homepage": "https://github.com/Pamoda-Jayasekera/vdelivery#readme",
+  "description": ""
+}

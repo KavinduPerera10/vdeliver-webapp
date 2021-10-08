@@ -65,7 +65,18 @@
         top:10%;
         left:70%;
     }
-  </style>
+  </style> 
+ <script>// v9 compat packages are API compatible with v8 code
+  import firebase from 'firebase/compat/app';
+  import 'firebase/compat/auth';
+  import 'firebase/compat/firestore';
+  import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const auth = getAuth(firebaseApp);
+onAuthStateChanged(auth, user => {
+  // Check for user status
+});
+</script> 
 </head>
 <body>
  <img src="x1.PNG" alt="logo"> 
@@ -81,7 +92,7 @@
   <li><a href=".\customers.html">Customers</a></li> 
   <li><a href=".\newDeliveries.html">Add Orders</a></li>
   </ul> 
-  <a href=".\newDeliveries.html"><u id="underline2"> Add New Account </u></a>
+  <a href=".\addNewProfile.html"><u id="underline2"> Add New Account </u></a>
   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Drivers" title="Type in a name">
 
   <table id="myTable">
@@ -131,6 +142,7 @@
         }       
       }
     }
-    </script>
+    </script> 
+    
 </body>
 </html>

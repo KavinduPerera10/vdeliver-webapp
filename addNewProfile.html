@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link href="stylesheet\style3.css" rel="stylesheet" > 
+
+  <style>
+    img { 
+    position: absolute;
+    top:2.6%;
+    left:2%;
+    width: 60px;
+  height: 52px;
+    } 
+ 
+    ul{
+    position: absolute;
+    top:15%;
+    } 
+    p1{
+        font-size:25px;
+        color: white;
+        position:absolute;
+        top:10%;
+        left:25%;
+    } 
+    p8{
+      font-size:15px;
+      font-style:'Poppins' ;
+      position: absolute;
+      top:21%;
+      left:19.5%;
+      color: #17224D;
+      font-style: bold;
+    } 
+    p9{
+      font-size:15px;
+      font-style:'Poppins' ;
+      position: absolute;
+      top:-200%;
+      left:-15%;
+      color: #17224D;
+      font-style: bold;
+    } 
+    p10{
+      font-size:15px;
+      font-style:'Poppins' ;
+      position: absolute;
+      top:80%;
+      left:-15%;
+      color: #17224D;
+      font-style: bold;
+    } 
+    
+   
+  </style> 
+ 
+</head>
+
+<body>
+  
+ <img src="x1.PNG" alt="logo"> 
+ <p id="rcorners1"></p> 
+ <p id="rcorners2"></p> 
+ <ul>
+  <li><a href=".\dashboard.html">Dashboard</a></li> 
+  <li><a href=".\deliveries.html">Deliveries</a></li>
+  <li><a href=".\pickups.html">Pickups</a></li>
+  <li><a href=".\vehicles.html">Vehicles</a></li>
+  <li><a href=".\wallet.html">Wallet</a></li>
+  <li><a href=".\profiles.html">Profiles</a></li>
+  <li><a href=".\customers.html">Customers</a></li> 
+  <li><a href=".\newDeliveries.html">Add Orders</a></li>  
+  </ul> 
+  <px>Add New Account</px>
+  
+  <div id="container">
+
+    <span class="input">
+      <input type="text" class="input__field" id="name" />
+      <label for="name" class="input__label">
+        <span class="input__label-content">name</span>
+      </label>
+    </span>
+ 
+  
+    <span class="input">
+      <input type="text" class="input__field" id="driverid" />
+      <label for="driverid" class="input__label">
+        <span class="input__label-content">Driver Id</span>
+      </label>
+    </span>
+  <br>
+    <span class="input">
+      <input type="text" class="input__field" id="mobile" />
+      <label for="mobile" class="input__label">
+        <span class="input__label-content">Mobile Number</span>
+      </label>
+    </span>
+    <span class="input">
+      <input type="text" class="input__field" id="status" />
+      <label for="status" class="input__label">
+        <span class="input__label-content">Status</span>
+      </label>
+    </span> 
+   
+    <span class="input">
+      <input type="text" class="input__field" id="vehicletype" />
+      <label for="vehicletype" class="input__label">
+        <span class="input__label-content">vehicle type</span>
+      </label>
+    </span> 
+
+    <span class="input">
+      <input type="text" class="input__field" id="deliveries1" />
+      <label for="deliveries1" class="input__label">
+        <span class="input__label-content">Deliveries</span>
+      </label>
+    </span>
+  
+    <span class="input">
+      <input type="text" class="input__field" id="pickups" />
+      <label for="pickups" class="input__label">
+        <span class="input__label-content">Pickups</span>
+      </label>
+    </span> 
+    <span class="input">
+      <input type="text" class="input__field" id="lastseen" />
+      <label for="lastseen" class="input__label">
+        <span class="input__label-content">lastseen</span>
+      </label>
+    </span> 
+
+    <button id="insert" onclick="save()"> Insert </button>
+    <button id="select"> Select </button>
+    <button id="update"> Update </button>
+    <button id="delete"> Delete </button>
+
+   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js"></script> 
+  </div>
+  </div> 
+
+</body>  
+
+</html>

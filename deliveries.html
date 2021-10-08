@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="C:\Users\Pamoda Jayasekera\vdelivery\stylesheet\style2.css" rel="stylesheet" >
+  <link href="stylesheet\style2.css" rel="stylesheet" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
@@ -118,36 +118,96 @@
         <th>Total</th>       
       </tr>
     </thead>
-    <tbody>
-      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td></td><td></td><td></td></tr>
+    <tbody id="tbody1">
      
     </tbody>
   </table>
-  <script>
-  function myFunction() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }       
-    }
-  }
-  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
   
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+     apiKey: "AIzaSyBmdgOlEjIJum0cC1OiFQdk4u03f2qzKhk",
+     authDomain: "vdeliver-a4f86.firebaseapp.com",
+     databaseURL: "https://vdeliver-a4f86-default-rtdb.firebaseio.com",
+     projectId: "vdeliver-a4f86",
+     storageBucket: "vdeliver-a4f86.appspot.com",
+     messagingSenderId: "39517895679",
+     appId: "1:39517895679:web:3633c9b4ee791c3c9205ca",
+     measurementId: "G-5FQ0RB39DJ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import{getDatabase, ref, set, child, update, remove}
+    from "https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js";
+    
+
+    //-------GET ALL DATA--------------//
+   function SelectAllData()
+   {
+    firebase.database().ref('Deliveries/').once('value',
+    function(AllRecords){
+     AllRecords.forEach(
+        function(CurrentRecord){
+          var oderreference= CurrentRecord.val().oderref;
+          var delivery=CurrentRecord.val().deliverytype;
+          var deliveryaddress=CurrentRecord.val().deliveryadd;
+          var receiverphonenum=CurrentRecord.val().receiverphone;
+          var paymenttype=CurrentRecord.val().paymenttype;
+          var total=CurrentRecord.val().total; 
+
+          AddItemsToTable(oderreference,delivery,deliveryaddress,receiverphonenum,paymenttype,total);
+        }
+     );
+    });
+   }
+   window.onload=SelectAllData; 
+
+   //---------FILLING THE TABLE-------//
+   var oderId=0;
+   function AddItemsToTable(oderreference,delivery,deliveryaddress,receiverphonenum,paymenttype,total)
+   {
+     var tbody= documnet.getElementById('tbody1');
+     var trow= document.createElement('tr');
+     var td1=document.createElement('td');
+     var td2=document.createElement('td');
+     var td3=document.createElement('td');
+     var td4=document.createElement('td');
+     var td5=document.createElement('td');
+     var td6=document.createElement('td');
+     var td6=document.createElement('td');
+
+     td1.innerHTML= ++oderId;
+     td2.innerHTML= oderreference;
+     td3.innerHTML= delivery;
+     td4.innerHTML= deliveryaddress;
+     td5.innerHTML= receiverphonenum;
+     td6.innerHTML= paymenttype;
+     td7.innerHTML= total;
+
+    
+     trow.appendChild(td1);
+     trow.appendChild(td2);
+     trow.appendChild(td3);
+     trow.appendChild(td4);
+     trow.appendChild(td5);
+     trow.appendChild(td6);
+     trow.appendChild(td7); 
+
+     tbody.appendChild(trow);
+   }
+
+    </script>
 </body>
 </html>
