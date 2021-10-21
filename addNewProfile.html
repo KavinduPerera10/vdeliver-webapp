@@ -1,148 +1,214 @@
-
 <!DOCTYPE html>
 
 <html>
+
 <head>
-  <link href="stylesheet\style3.css" rel="stylesheet" > 
+  <link href="stylesheet\style3.css" rel="stylesheet">
 
   <style>
-    img { 
-    position: absolute;
-    top:2.6%;
-    left:2%;
-    width: 60px;
-  height: 52px;
-    } 
- 
-    ul{
-    position: absolute;
-    top:15%;
-    } 
-    p1{
-        font-size:25px;
-        color: white;
-        position:absolute;
-        top:10%;
-        left:25%;
-    } 
-    p8{
-      font-size:15px;
-      font-style:'Poppins' ;
+    img {
       position: absolute;
-      top:21%;
-      left:19.5%;
+      top: 2.6%;
+      left: 2%;
+      width: 60px;
+      height: 52px;
+    }
+
+    ul {
+      position: absolute;
+      top: 15%;
+    }
+
+    p1 {
+      font-size: 25px;
+      color: white;
+      position: absolute;
+      top: 10%;
+      left: 25%;
+    }
+
+    p8 {
+      font-size: 15px;
+      font-style: 'Poppins';
+      position: absolute;
+      top: 21%;
+      left: 19.5%;
       color: #17224D;
       font-style: bold;
-    } 
-    p9{
-      font-size:15px;
-      font-style:'Poppins' ;
+    }
+
+    p9 {
+      font-size: 15px;
+      font-style: 'Poppins';
       position: absolute;
-      top:-200%;
-      left:-15%;
+      top: -200%;
+      left: -15%;
       color: #17224D;
       font-style: bold;
-    } 
-    p10{
-      font-size:15px;
-      font-style:'Poppins' ;
+    }
+
+    p10 {
+      font-size: 15px;
+      font-style: 'Poppins';
       position: absolute;
-      top:80%;
-      left:-15%;
+      top: 80%;
+      left: -15%;
       color: #17224D;
       font-style: bold;
+    }
+
+    button {
+      position: absolute;
+      top: 250%;
+      left: 50%;
     } 
-    
-   
-  </style> 
- 
+    #underline9{
+      position:absolute;
+      left:70%;
+      top:20%;
+      font-size:15px;
+      background-color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border-radius: 10px;
+      border-color:#17224D ;
+      
+      
+    }
+  </style>
+
 </head>
 
 <body>
-  
- <img src="x1.PNG" alt="logo"> 
- <p id="rcorners1"></p> 
- <p id="rcorners2"></p> 
- <ul>
-  <li><a href=".\dashboard.html">Dashboard</a></li> 
-  <li><a href=".\deliveries.html">Deliveries</a></li>
-  <li><a href=".\pickups.html">Pickups</a></li>
-  <li><a href=".\vehicles.html">Vehicles</a></li>
-  <li><a href=".\wallet.html">Wallet</a></li>
-  <li><a href=".\profiles.html">Profiles</a></li>
-  <li><a href=".\customers.html">Customers</a></li> 
-  <li><a href=".\newDeliveries.html">Add Orders</a></li>  
-  </ul> 
+  <a href=".\profiles.html"><u id="underline9"> Profiles </u></a>
+  <img src="x1.PNG" alt="logo">
+  <p id="rcorners1"></p>
+  <p id="rcorners2"></p>
+  <ul>
+    <li><a href=".\dashboard.html">Dashboard</a></li>
+    <li><a href=".\deliveries.html">Deliveries</a></li>
+    <li><a href=".\pickups.html">Pickups</a></li>
+    <li><a href=".\vehicles.html">Vehicles</a></li>
+    <li><a href=".\wallet.html">Wallet</a></li>
+    <li><a href=".\profiles.html">Profiles</a></li>
+    <li><a href=".\customers.html">Customers</a></li>
+    <li><a href=".\newDeliveries.html">Add Orders</a></li>
+  </ul>
   <px>Add New Account</px>
-  
-  <div id="container">
+
+  <div id="container1">
 
     <span class="input">
       <input type="text" class="input__field" id="name" />
       <label for="name" class="input__label">
-        <span class="input__label-content">name</span>
+        <span class="input__label-content">Name</span>
       </label>
     </span>
- 
-  
-    <span class="input">
-      <input type="text" class="input__field" id="driverid" />
-      <label for="driverid" class="input__label">
-        <span class="input__label-content">Driver Id</span>
-      </label>
-    </span>
-  <br>
-    <span class="input">
-      <input type="text" class="input__field" id="mobile" />
-      <label for="mobile" class="input__label">
-        <span class="input__label-content">Mobile Number</span>
-      </label>
-    </span>
-    <span class="input">
-      <input type="text" class="input__field" id="status" />
-      <label for="status" class="input__label">
-        <span class="input__label-content">Status</span>
-      </label>
-    </span> 
-   
-    <span class="input">
-      <input type="text" class="input__field" id="vehicletype" />
-      <label for="vehicletype" class="input__label">
-        <span class="input__label-content">vehicle type</span>
-      </label>
-    </span> 
+   </div>
 
+   <div id="container2">
     <span class="input">
-      <input type="text" class="input__field" id="deliveries1" />
-      <label for="deliveries1" class="input__label">
-        <span class="input__label-content">Deliveries</span>
+      <input type="text" class="input__field" id="employeeID" />
+      <label for="employeeID" class="input__label">
+        <span class="input__label-content">Employee Id</span>
       </label>
     </span>
-  
+    <br>
+   </div> 
+   <div id="container3">
     <span class="input">
-      <input type="text" class="input__field" id="pickups" />
-      <label for="pickups" class="input__label">
-        <span class="input__label-content">Pickups</span>
+      <input type="text" class="input__field" id="DOB" />
+      <label for="DOB" class="input__label">
+        <span class="input__label-content">Date Of Birth</span>
+      </label>
+    </span>
+ </div>
+ <div id="container4">
+    <span class="input">
+      <input type="text" class="input__field" id="drivingLicenseNumber" />
+      <label for="drivingLicenseNumber" class="input__label">
+        <span class="input__label-content">Driving License Number</span>
+      </label>
+    </span>
+</div>
+<div id="container5">
+    <span class="input">
+      <input type="text" class="input__field" id="phoneNumber" />
+      <label for="phoneNumber" class="input__label">
+        <span class="input__label-content">Phone NUmber</span>
       </label>
     </span> 
-    <span class="input">
-      <input type="text" class="input__field" id="lastseen" />
-      <label for="lastseen" class="input__label">
-        <span class="input__label-content">lastseen</span>
-      </label>
-    </span> 
-
-    <button id="insert" onclick="save()"> Insert </button>
-    <button id="select"> Select </button>
-    <button id="update"> Update </button>
-    <button id="delete"> Delete </button>
-
-   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js"></script> 
+    </div>
+    <div>
+      <button id="insert2"> Submit </button>
+    </div>
   </div>
-  </div> 
 
-</body>  
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBmdgOlEjIJum0cC1OiFQdk4u03f2qzKhk",
+      authDomain: "vdeliver-a4f86.firebaseapp.com",
+      databaseURL: "https://vdeliver-a4f86-default-rtdb.firebaseio.com",
+      projectId: "vdeliver-a4f86",
+      storageBucket: "vdeliver-a4f86.appspot.com",
+      messagingSenderId: "39517895679",
+      appId: "1:39517895679:web:3633c9b4ee791c3c9205ca",
+      measurementId: "G-5FQ0RB39DJ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js";
+    const db = getFirestore();
+
+    let name = document.getElementById("name");
+    let employeeID = document.getElementById("employeeID");
+    let DOB = document.getElementById("DOB");
+    let drivingLicenseNumber = document.getElementById("drivingLicenseNumber");
+    let phoneNumber = document.getElementById("phoneNumber");
+
+     let insert2=document.getElementById("insert2");
+
+     //----------------------------Add Document---------------------------------//
+
+     async function AddDocument_AutoID()
+     {
+       var ref=collection(db,"EmployeeDetails");
+
+       const docRef = await addDoc(ref, {
+        name : name.value,
+        employeeID : employeeID.value,
+        DOB : DOB.value,
+        drivingLicenseNumber : drivingLicenseNumber.value,
+        phoneNumber : phoneNumber.value
+       } 
+       ) 
+       .then(()=>{
+         alert("data added successfuly");
+       }) 
+       .catch((error)=>{
+         alert("Error: " +error); 
+       })
+     }
+//----------------assign events to btn---------------------//
+
+insert2.addEventListener("click",AddDocument_AutoID);
+
+  </script>
+
+</body>
 
 </html>

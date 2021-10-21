@@ -1,80 +1,82 @@
-
 <!DOCTYPE html>
 
 <html>
+
 <head>
 
-  <link href="stylesheet\style3.css" rel="stylesheet" > 
+  <link href="stylesheet\style3.css" rel="stylesheet">
 
 
   <style>
-    img { 
-    position: absolute;
-    top:2.6%;
-    left:2%;
-    width: 60px;
-  height: 52px;
-    } 
- 
-    ul{
-    position: absolute;
-    top:15%;
-    } 
-    p1{
-        font-size:25px;
-        color: white;
-        position:absolute;
-        top:10%;
-        left:25%;
-    } 
-    p8{
-      font-size:15px;
-      font-style:'Poppins' ;
+    img {
       position: absolute;
-      top:21%;
-      left:19.5%;
+      top: 2.6%;
+      left: 2%;
+      width: 60px;
+      height: 52px;
+    }
+
+    ul {
+      position: absolute;
+      top: 15%;
+    }
+
+    p1 {
+      font-size: 25px;
+      color: white;
+      position: absolute;
+      top: 10%;
+      left: 25%;
+    }
+
+    p8 {
+      font-size: 15px;
+      font-style: 'Poppins';
+      position: absolute;
+      top: 21%;
+      left: 19.5%;
       color: #17224D;
       font-style: bold;
-    } 
-    p9{
-      font-size:15px;
-      font-style:'Poppins' ;
+    }
+
+    p9 {
+      font-size: 15px;
+      font-style: 'Poppins';
       position: absolute;
-      top:-200%;
-      left:-15%;
+      top: -200%;
+      left: -15%;
       color: #17224D;
       font-style: bold;
-    } 
-    p10{
-      font-size:15px;
-      font-style:'Poppins' ;
+    }
+
+    p10 {
+      font-size: 15px;
+      font-style: 'Poppins';
       position: absolute;
-      top:80%;
-      left:-15%;
+      top: 80%;
+      left: -15%;
       color: #17224D;
       font-style: bold;
-    } 
-    
-   
-  </style> 
- 
+    }
+  </style>
+
 </head>
 
 <body>
-  
- <img src="x1.PNG" alt="logo"> 
- <p id="rcorners1"></p> 
- <p id="rcorners2"></p> 
- <ul>
-  <li><a href=".\dashboard.html">Dashboard</a></li> 
-  <li><a href=".\deliveries.html">Deliveries</a></li>
-  <li><a href=".\pickups.html">Pickups</a></li>
-  <li><a href=".\vehicles.html">Vehicles</a></li>
-  <li><a href=".\wallet.html">Wallet</a></li>
-  <li><a href=".\profiles.html">Profiles</a></li>
-  <li><a href=".\customers.html">Customers</a></li> 
-  <li><a href=".\newDeliveries.html">Add Orders</a></li>  
-  </ul> 
+
+  <img src="x1.PNG" alt="logo">
+  <p id="rcorners1"></p>
+  <p id="rcorners2"></p>
+  <ul>
+    <li><a href=".\dashboard.html">Dashboard</a></li>
+    <li><a href=".\deliveries.html">Deliveries</a></li>
+    <li><a href=".\pickups.html">Pickups</a></li>
+    <li><a href=".\vehicles.html">Vehicles</a></li>
+    <li><a href=".\wallet.html">Wallet</a></li>
+    <li><a href=".\profiles.html">Profiles</a></li>
+    <li><a href=".\customers.html">Customers</a></li>
+    <li><a href=".\newDeliveries.html">Add Orders</a></li>
+  </ul>
   <px>Add Order</px>
   <p8>order details</p8>
   <div id="container">
@@ -85,15 +87,15 @@
         <span class="input__label-content">oderref</span>
       </label>
     </span>
- 
-  
+
+
     <span class="input">
       <input type="text" class="input__field" id="deliverytype" />
       <label for="deliverytype" class="input__label">
         <span class="input__label-content">Delivery Type</span>
       </label>
     </span>
-  <br>
+    <br>
     <span class="input">
       <input type="text" class="input__field" id="pickupadd" />
       <label for="pickupadd" class="input__label">
@@ -105,7 +107,7 @@
       <label for="mobilenum" class="input__label">
         <span class="input__label-content">Mobile Number</span>
       </label>
-    </span> 
+    </span>
     <p9>Receiver</p9>
     <span class="input">
       <input type="text" class="input__field" id="receiver" />
@@ -113,43 +115,43 @@
         <span class="input__label-content">Receiver</span>
       </label>
     </span>
-  
+
     <span class="input">
       <input type="text" class="input__field" id="deliveryadd" />
       <label for="deliveryadd" class="input__label">
         <span class="input__label-content">Delivery Address</span>
       </label>
-    </span> 
+    </span>
     <span class="input">
       <input type="text" class="input__field" id="receiverphone" />
       <label for="receiverphone" class="input__label">
         <span class="input__label-content">Receiver Phone No</span>
       </label>
-    </span> 
+    </span>
 
     <p10>Payment Details</p10>
-    
+
     <span class="input">
       <input type="text" class="input__field" id="paymenttype" />
       <label for="paymenttype" class="input__label">
         <span class="input__label-content">Payment Type</span>
       </label>
     </span>
-  
+
     <span class="input">
       <input type="text" class="input__field" id="deliverycharges" />
       <label for="deliverycharges" class="input__label">
         <span class="input__label-content">Delivery Charges</span>
       </label>
-    </span> 
+    </span>
     <span class="input">
       <input type="text" class="input__field" id="total" />
       <label for="total" class="input__label">
         <span class="input__label-content">Total (LKR)</span>
       </label>
-    </span> 
-    
-  
+    </span>
+
+
     <span class="input message">
       <textarea class="input__field" id="note"></textarea>
       <label for="note" class="input__label">
@@ -157,80 +159,79 @@
       </label>
     </span>
 
-    <button id="insert" > Submit </button> 
-  </div>
-  </div> 
+    <button id="insert"> Submit </button>
   
+  </div>
+
   <script type="module">
     // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
-  
+
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-     apiKey: "AIzaSyBmdgOlEjIJum0cC1OiFQdk4u03f2qzKhk",
-     authDomain: "vdeliver-a4f86.firebaseapp.com",
-     databaseURL: "https://vdeliver-a4f86-default-rtdb.firebaseio.com",
-     projectId: "vdeliver-a4f86",
-     storageBucket: "vdeliver-a4f86.appspot.com",
-     messagingSenderId: "39517895679",
-     appId: "1:39517895679:web:3633c9b4ee791c3c9205ca",
-     measurementId: "G-5FQ0RB39DJ"
+      apiKey: "AIzaSyBmdgOlEjIJum0cC1OiFQdk4u03f2qzKhk",
+      authDomain: "vdeliver-a4f86.firebaseapp.com",
+      databaseURL: "https://vdeliver-a4f86-default-rtdb.firebaseio.com",
+      projectId: "vdeliver-a4f86",
+      storageBucket: "vdeliver-a4f86.appspot.com",
+      messagingSenderId: "39517895679",
+      appId: "1:39517895679:web:3633c9b4ee791c3c9205ca",
+      measurementId: "G-5FQ0RB39DJ"
     };
-  
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
-    import{getDatabase, ref, set, child, update, remove}
-    from "https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js";
+    import { getDatabase, ref, set, child, update, remove }
+      from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js";
 
-    const db =getDatabase();
+    const db = getDatabase();
 
-    var oderref      = document.getElementById("oderref");
+    var oderref = document.getElementById("oderref");
     var deliverytype = document.getElementById("deliverytype");
-    var pickupadd    = document.getElementById("pickupadd"); 
-    var mobilenum    = document.getElementById("mobilenum"); 
-    var receiver     = document.getElementById("receiver"); 
-    var deliveryadd  = document.getElementById("deliveryadd"); 
-    var receiverphone= document.getElementById("receiverphone"); 
-    var paymenttype  = document.getElementById("paymenttype"); 
-    var total  = document.getElementById("total");
+    var pickupadd = document.getElementById("pickupadd");
+    var mobilenum = document.getElementById("mobilenum");
+    var receiver = document.getElementById("receiver");
+    var deliveryadd = document.getElementById("deliveryadd");
+    var receiverphone = document.getElementById("receiverphone");
+    var paymenttype = document.getElementById("paymenttype");
+    var total = document.getElementById("total");
 
-    var insert      = document.getElementById("insert");
+    var insert = document.getElementById("insert");
 
     //----------INSER DATA-----------//
-    function InserData()
-    {
-      set(ref(db,"Deliveries/"+oderref.value),{
-        oderreference: oderref.value,
-        delivery: deliverytype.value,
-        pickup: pickupadd.value,
-        mobilenumber:mobilenum.value,
-        receiver:receiver.value,
-        deliveryaddress: deliveryadd.value,
-        receiverphonenum:receiverphone.value,
-        paymenttype:paymenttype.value,
+    function InserData() {
+      set(ref(db, "Deliveries/" + oderref.value), {
+        oderref: oderref.value,
+        deliverytype: deliverytype.value,
+        pickupadd: pickupadd.value,
+        mobilenum: mobilenum.value,
+        receiver: receiver.value,
+        deliveryadd: deliveryadd.value,
+        receiverphone: receiverphone.value,
+        paymenttype: paymenttype.value,
         total: total.value
       })
-      .then(()=> {
-        alert("data stored");
-      }) 
-      .catch((error)=> {
-        alert("unsuccessful, error"+error);
-      });
-     
-    } 
+        .then(() => {
+          alert("data stored");
+        })
+        .catch((error) => {
+          alert("unsuccessful, error" + error);
+        });
+
+    }
     //-------------ASSIGN EVENTS TO BUTTONS------------//
-    insert.addEventListener('click',InserData);
+    insert.addEventListener('click', InserData);
 
   </script>
 
 
-</body>  
+</body>
 
 
 </html>

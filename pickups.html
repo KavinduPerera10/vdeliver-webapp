@@ -1,139 +1,293 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link href="stylesheet\style2.css" rel="stylesheet" >
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-#myInput {
-  position: absolute;
-  top:33%;
-  left: 20%;
-  width:24%;
-  height:4%;
-  font-size: 14px;
-  padding: 10px 15px 10px 30px;
-  margin-bottom:8px;
-}
-#myTable {
-  border-collapse: collapse;
-  width: 70%;
-  border: 1px solid #ddd;
-  font-size: 15px;
-  height: 50%;
-  position: absolute;
-  top: 40%;
-  left: 20%;
-  background-color: white;
-}
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
+  <link href="stylesheet\style2.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-#myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
+    #myInput {
+      position: absolute;
+      top: 33%;
+      left: 20%;
+      width: 24%;
+      height: 4%;
+      font-size: 14px;
+      padding: 10px 15px 10px 30px;
+      margin-bottom: 8px;
+    }
 
-    img { 
-    position: absolute;
-    top:2.6%;
-    left:2%;
-    width: 60px;
-  height: 52px;
-    } 
- 
-    ul{
-    position: absolute;
-    top:15%;
+    #myTable {
+      border-collapse: collapse;
+      width: 70%;
+      border: 1px solid #ddd;
+      font-size: 15px;
+      height: 50%;
+      position: absolute;
+      top: 40%;
+      left: 20%;
+      background-color: white;
+    }
+
+    #myTable th,
+    #myTable td {
+      text-align: left;
+      padding: 12px;
+    }
+
+    #myTable tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    #myTable tr.header,
+    #myTable tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    img {
+      position: absolute;
+      top: 2.6%;
+      left: 2%;
+      width: 60px;
+      height: 52px;
+    }
+
+    ul {
+      position: absolute;
+      top: 15%;
     }
   </style>
 </head>
+
 <body>
- <img src="x1.PNG" alt="logo"> 
- <p id="rcorners1"></p> 
- <p id="rcorners2"></p> 
- <ul>
-  <li><a href=".\dashboard.html">Dashboard</a></li> 
-  <li><a href=".\deliveries.html">Deliveries</a></li>
-  <li><a href=".\pickups.html">Pickups</a></li>
-  <li><a href=".\vehicles.html">Vehicles</a></li>
-  <li><a href=".\wallet.html">Wallet</a></li>
-  <li><a href=".\profiles.html">Profiles</a></li>
-  <li><a href=".\customers.html">Customers</a></li> 
-  <li><a href=".\newDeliveries.html">Add Orders</a></li>
+  <img src="x1.PNG" alt="logo">
+  <p id="rcorners1"></p>
+  <p id="rcorners2"></p>
+  <ul>
+    <li><a href=".\dashboard.html">Dashboard</a></li>
+    <li><a href=".\deliveries.html">Deliveries</a></li>
+    <li><a href=".\pickups.html">Pickups</a></li>
+    <li><a href=".\vehicles.html">Vehicles</a></li>
+    <li><a href=".\wallet.html">Wallet</a></li>
+    <li><a href=".\profiles.html">Profiles</a></li>
+    <li><a href=".\customers.html">Customers</a></li>
+    <li><a href=".\newDeliveries.html">Add Orders</a></li>
   </ul>
   <div class="square1">
-    <div class="content">       
-         11<br><br>
-            All
+    <div class="content">
+      11<br><br>
+      All
     </div>
-</div>
-<div class="square2">
-    <div class="content">       
-         4<br><br>
-            Pending
+  </div>
+  <div class="square2">
+    <div class="content">
+      4<br><br>
+      Pending
     </div>
-</div>
-<div class="square3">
-    <div class="content">       
-         4<br><br>
-            Completed
-    </div> 
+  </div>
+  <div class="square3">
+    <div class="content">
+      4<br><br>
+      Completed
     </div>
+  </div>
 
+  <h1>Pickups</h1>
+  <input type="text" id="search_input" onkeyup="FilterkeyWord()" style="margin-bottom: 16px;" placeholder="Reference Id"
+    class="">
+  <table id="myTable" class="table">
+    <tr class="header">
+      <th>Order Id</th>
+      <th>Ref</td>
+      <th>Delivery Type</th>
+      <th>Address</th>
+      <th>Mobile Number</th>
+      <th>Payment Type</th>
+      <th>Total</th>
+    </tr>
+    <tbody id="tbody1">
 
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Drivers" title="Type in a name">
-
-<table id="myTable">
-  <tr class="header">
-        <th>Order Id</th>
-        <th>Ref</td>
-        <th>Status</th>
-        <th>Address</th>
-        <th>Driver Id</th> 
-        <th>Mobile Number</th>  
-        <th>Total</th>       
-      </tr>
-    <tbody>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-      <tr><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td><td ><input type="="text"></td></tr>
-     
     </tbody>
   </table>
 
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
+  <script type="module">
+    //----Filling the Table-----//
+    var oderId = 0;
+    var tbody = document.getElementById('tbody1');
+
+    function AddItemToTable(oderref, deliverytype, pickupadd, mobilenum, paymenttype, total) {
+      let trow = document.createElement("tr");
+      let td1 = document.createElement('td');
+      let td2 = document.createElement('td');
+      let td3 = document.createElement('td');
+      let td4 = document.createElement('td');
+      let td5 = document.createElement('td');
+      let td6 = document.createElement('td');
+      let td7 = document.createElement('td');
+
+
+      td1.innerHTML = ++oderId;
+      td2.innerHTML = oderref;
+      td3.innerHTML = deliverytype;
+      td4.innerHTML = pickupadd;
+      td5.innerHTML = mobilenum;
+      td6.innerHTML = paymenttype;
+      td7.innerHTML = total;
+
+      trow.appendChild(td1);
+      trow.appendChild(td2);
+      trow.appendChild(td3);
+      trow.appendChild(td4);
+      trow.appendChild(td5);
+      trow.appendChild(td6);
+      trow.appendChild(td7);
+
+      tbody.appendChild(trow);
+    }
+
+    function AddAllItemsToTable(Delivery) {
+      oderId = 0;
+      tbody.innerHTML = "";
+      Delivery.forEach(element => {
+        AddItemToTable(element.oderref, element.deliverytype, element.pickupadd, element.mobilenum, element.paymenttype, element.total);
+      });
+    }
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBmdgOlEjIJum0cC1OiFQdk4u03f2qzKhk",
+      authDomain: "vdeliver-a4f86.firebaseapp.com",
+      databaseURL: "https://vdeliver-a4f86-default-rtdb.firebaseio.com",
+      projectId: "vdeliver-a4f86",
+      storageBucket: "vdeliver-a4f86.appspot.com",
+      messagingSenderId: "39517895679",
+      appId: "1:39517895679:web:3633c9b4ee791c3c9205ca",
+      measurementId: "G-5FQ0RB39DJ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+
+    import { getDatabase, ref, onValue, get, child } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+
+    const db = getDatabase();
+
+    //------Getting all Data--------//
+    function GetAllDataOnce() {
+      const dbRef = ref(db);
+
+      get(child(dbRef, "Deliveries"))
+        .then((snapshot) => {
+          var delivery = [];
+
+          snapshot.forEach(childSnapshot => {
+            delivery.push(childSnapshot.val());
+          });
+
+          AddAllItemsToTable(delivery);
+        });
+    }
+
+
+    //-------//
+    function GetAllDataRealtime() {
+      const dbRef = ref(db);
+
+      onValue(dbRef, (snapshot) => {
+        var delivery = [];
+
+        snapshot.forEach(childSnapshot => {
+          delivery.push(childSnapshot.val());
+        });
+        AddAllItemsToTable(delivery);
+      });
+
+    }
+
+    window.onload = GetAllDataOnce;
+  </script>
+
+
+  <script>
+    //----------------------------- Specific column search script----------------//
+    function FilterkeyWord() {
+      // Declare variables
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("search_input");
+      filter = input.value.toLowerCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        // change index to change your column search
+
+        if (td) {
+          if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
       }
-    }       
-  }
-}
-</script>
+    }
+
+
+
+    // -----------------------------All Columns search script----------------------------//
+    function FilterkeyWord_all_table() {
+
+      // Count td if you want to search on all table instead of specific column
+
+      count = $('.wrapper_all .table').children('tbody').children('tr:first-child').children('td').length;
+
+      // Declare variables
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("search_input_all");
+      filter = input.value.toLowerCase();
+
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 1; i < tr.length; i++) {
+
+        var flag = 0;
+        for (j = 0; j < count; j++) {
+          td = tr[i].getElementsByTagName("td")[j];
+          if (td) {
+            var td_text = td.innerHTML;
+            if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
+              //var td_text = td.innerHTML;  
+              //td.innerHTML = 'shaban';
+              flag = 1;
+            } else {
+
+            }
+          }
+        }
+        if (flag == 1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  </script>
 
 </body>
+
 </html>

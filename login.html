@@ -1,112 +1,147 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link href="stylesheet\style1.css" rel="stylesheet" >
-  <style>
-#rcorners1 {
-   position:absolute ;
-   top:510px;
-   left: 40%;
-  }
-  img { 
-    position: absolute;
-    top:200px;
-    left:47%;
-  } 
-  #rcorners2 {
-   position:absolute ;
-   top:570px;
-   left:40%;
-  } 
-p2{
-  position:absolute;
-  top:80%;
-  left:55%;
-} 
-p{
-  position:absolute;
-  top:65%;
-  left:45%;
-} 
+    <link href="stylesheet\style1.css" rel="stylesheet">
+    <style>
+        #rcorners1 {
+            position: absolute;
+            top: 510px;
+            left: 40%;
+        }
+
+        img {
+            position: absolute;
+            top: 200px;
+            left: 47%;
+        }
+
+        #rcorners2 {
+            position: absolute;
+            top: 570px;
+            left: 40%;
+        }
+
+        p2 {
+            position: absolute;
+            top: 80%;
+            left: 55%;
+        }
+
+        p {
+            position: absolute;
+            top: 65%;
+            left: 45%;
+        }
 
 
-#loginbutton{
-  position:absolute;
-  left:48%;
-  top:750px;
+        #loginbutton {
+            position: absolute;
+            left: 48%;
+            top: 750px;
 
-}
-  </style> 
-  
+        }
+    </style>
+
 </head>
-<body> 
 
 
- <div class="bottom"></div> 
- <img src="x1.PNG" alt="logo"> 
-<p1>V delivery</p1> 
+<body>
+    <div class="bottom"></div>
+    <img src="x1.PNG" alt="logo">
+    <p1>V delivery</p1>
 
-<form action="/action_page.php" id="login_div">
-  <input type="text" id="fname" name="fname" placeholder="email"><br><br></form>
-  <form action="/action_page.php" id="user_div">
-  <input type="password" id="lname" name="lname" placeholder="Password"><br><br>
-
-  
-
-<p2 class="password-forgotten">Password forgotten? <a style="cursor:pointer" href=".\forgotPassword.html"> Click here </a></p2>
-</div>
-
-<span class="remember-me-check">
-  <input type="checkbox" id="remember-me" />
-  <label for="remember-me" style="margin: 0; padding: 0 0 0 25px;">Keep me logged in</label>
- </span> 
-
- <button  id="login" class="button button2" >Login</button>
-</form>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-
-   apiKey: "AIzaSyBmdgOlEjIJum0cC1OiFQdk4u03f2qzKhk",
-   authDomain: "vdeliver-a4f86.firebaseapp.com",
-   databaseURL: "https://vdeliver-a4f86-default-rtdb.firebaseio.com",
-   projectId: "vdeliver-a4f86",
-   storageBucket: "vdeliver-a4f86.appspot.com",
-   messagingSenderId: "39517895679",
-   appId: "1:39517895679:web:3633c9b4ee791c3c9205ca",
-   measurementId: "G-5FQ0RB39DJ"
+    <form id="login_div">
+        <input type="text" id="fname" name="fname" placeholder="email"><br><br>
+    </form>
+    <form id="user_div">
+        <input type="password" id="lname" name="lname" placeholder="Password"><br><br>
 
 
-  };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const analytics = getAnalytics(app);
+        <p2 class="password-forgotten">Password forgotten? <a style="cursor:pointer" href=".\forgotPassword.html"> Click
+                here </a></p2>
+        </div>
 
-  document.getElementById("login").addEventListener('click', function(){
+        <span class="remember-me-check">
+            <input type="checkbox" id="remember-me" />
+            <label for="remember-me" style="margin: 0; padding: 0 0 0 25px;">Keep me logged in</label>
+        </span>
 
-    const email= document.getElementById("email").value 
-    const password= document.getElementById("password").value
+      <a href="./dashboard.html"  <button id="login" class="button button2">Login</button> </a>
+      <button id="signup" class="button button9">Signup</button>
+    
+    </form> 
 
-    signInWithEmailAndPassword(auth, email, password)
-    .then(()=> {
-        alert("logged in");
-      }) 
-      .catch((error)=> {
-        alert("unsuccessful, error"+error);
-      });
-  })
-</script> 
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBmdgOlEjIJum0cC1OiFQdk4u03f2qzKhk",
+            authDomain: "vdeliver-a4f86.firebaseapp.com",
+            databaseURL: "https://vdeliver-a4f86-default-rtdb.firebaseio.com",
+            projectId: "vdeliver-a4f86",
+            storageBucket: "vdeliver-a4f86.appspot.com",
+            messagingSenderId: "39517895679",
+            appId: "1:39517895679:web:3633c9b4ee791c3c9205ca",
+            measurementId: "G-5FQ0RB39DJ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+//-------------------signin---------------------------------------------------//
+        document.getElementById("login").addEventListener('click', function () {
+            const email = document.getElementById("fname").value
+            const password = document.getElementById("lname").value
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log("logged in")
+                    // ... 
+                   
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorCode + errorMessage)
+                });
+              
+        }) 
+
+//----------------------signup--------------------------------------------------//
+document.getElementById("signup").addEventListener('click', function () {
+            const email = document.getElementById("fname").value
+            const password = document.getElementById("lname").value
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log("created")
+                    // ... 
+                   
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorCode + errorMessage)
+                });
+              
+        }) 
+
+    </script>
 
 </body>
+
 </html>

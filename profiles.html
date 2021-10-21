@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="C:\Users\Pamoda Jayasekera\vdelivery\stylesheet\style2.css" rel="stylesheet" >
+  <link href="stylesheet\style2.css" rel="stylesheet" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
@@ -66,17 +66,7 @@
         left:70%;
     }
   </style> 
- <script>// v9 compat packages are API compatible with v8 code
-  import firebase from 'firebase/compat/app';
-  import 'firebase/compat/auth';
-  import 'firebase/compat/firestore';
-  import { getAuth, onAuthStateChanged } from "firebase/auth";
-
-const auth = getAuth(firebaseApp);
-onAuthStateChanged(auth, user => {
-  // Check for user status
-});
-</script> 
+  
 </head>
 <body>
  <img src="x1.PNG" alt="logo"> 
@@ -93,56 +83,180 @@ onAuthStateChanged(auth, user => {
   <li><a href=".\newDeliveries.html">Add Orders</a></li>
   </ul> 
   <a href=".\addNewProfile.html"><u id="underline2"> Add New Account </u></a>
-  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Drivers" title="Type in a name">
-
-  <table id="myTable">
+  
+  <h1>Profiles</h1>
+  <input type="text" id="search_input" onkeyup="FilterkeyWord()" style="margin-bottom: 16px;"
+      placeholder="Employee Id" class="">
+    <table id="myTable" class="table">
     <thead>
     <tr class="header">
+        <th> </th>
         <th>Name</th>
-        <th>Driver Id</td>
+        <th>EmployeeID Id</th>
+        <th>Date of Birth</th>
+        <th>License Number</th>
         <th>Mobile Number</th>
-        <th>Status</th>
-        <th>Vehicle type</th>
-        <th>Deliveries</th> 
-        <th>Pickups</th>
-        <th>Last Active</th>   
+        
+       
               
       </tr>
     </thead>
-    <tbody>
-      <tr><td></td><td></td><td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td><td></td><td></td><td></td><td></td><td></td></tr>
-      
-      
+    <tbody id="tbody1">
      
     </tbody>
   </table>
-  <script>
-    function myFunction() {
-      var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
+  <script type="module">
+    //------------Filling The Table--------------//
+    var oderId=0;
+    var tbody= document.getElementById('tbody1');
+    
+    function AddItemToTable(name, employeeID,dOB,drivingLicenseNumber,phoneNumber ){
+      let trow=document.createElement("tr");
+      let td1=document.createElement('td');
+      let td2=document.createElement('td');
+      let td3=document.createElement('td');
+      let td4=document.createElement('td');
+      let td5=document.createElement('td');
+      let td6=document.createElement('td');
+    
+      td1. innerHTML= ++oderId;
+      td2. innerHTML= name;
+      td3. innerHTML= employeeID;
+      td4. innerHTML= dOB; 
+      td5. innerHTML= drivingLicenseNumber;
+      td6. innerHTML= phoneNumber;
+    
+      trow.appendChild(td1);
+      trow.appendChild(td2);
+      trow.appendChild(td3);
+      trow.appendChild(td4);
+      trow.appendChild(td5);
+      trow.appendChild(td6);
+    
+      tbody.appendChild(trow);
+      
+    }  
+    
+    function AddAllItemToTable(TheWallet){
+      oderId=0;
+      tbody.innerHTML="";
+      TheWallet.forEach(element => {
+        AddItemToTable(element.name,element.employeeID, element.DOB,element.drivingLicenseNumber,element.phoneNumber );
+      }) ;
+    }
+     
+    /*-----------------imports and configuration------------*/
+    
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBmdgOlEjIJum0cC1OiFQdk4u03f2qzKhk",
+        authDomain: "vdeliver-a4f86.firebaseapp.com",
+        databaseURL: "https://vdeliver-a4f86-default-rtdb.firebaseio.com",
+        projectId: "vdeliver-a4f86",
+        storageBucket: "vdeliver-a4f86.appspot.com",
+        messagingSenderId: "39517895679",
+        appId: "1:39517895679:web:3633c9b4ee791c3c9205ca",
+        measurementId: "G-5FQ0RB39DJ"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+     import{getFirestore,doc,getDoc,getDocs,onSnapshot,collection } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js";
+     const db=getFirestore(); 
+    
+    
+     //---------------------Get all Data-----------//
+     async function GetAllDataOnce(){
+       const querySnapshot= await getDocs(collection(db,"EmployeeDetails"));
+    
+       var delivery=[];
+       querySnapshot.forEach(doc=>{
+        delivery.push(doc.data());
+       });
+    
+       AddAllItemToTable(delivery);
+    
+     }
+     window.onload= GetAllDataOnce;
+    
+    </script> 
+    
+
+
+<script>
+  //----------------------------- Specific column search script----------------//
+function FilterkeyWord() {
+      // Declare variables
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("search_input");
+      filter = input.value.toLowerCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
       for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
+          td = tr[i].getElementsByTagName("td")[1];
+        // change index to change your column search
+
+          if (td) {
+              if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+              } else {
+                  tr[i].style.display = "none";
+              }
           }
-        }       
       }
-    }
-    </script> 
+  }
+
+
+
+// -----------------------------All Columns search script----------------------------//
+function FilterkeyWord_all_table() {
+
+// Count td if you want to search on all table instead of specific column
+
+count = $('.wrapper_all .table').children('tbody').children('tr:first-child').children('td').length; 
+
+      // Declare variables
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("search_input_all");
+      filter = input.value.toLowerCase();
+
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 1; i < tr.length; i++) {
+        
+        var flag = 0;
+        for(j = 0; j < count; j++){
+          td = tr[i].getElementsByTagName("td")[j];
+          if (td) {
+              var td_text = td.innerHTML;  
+              if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
+              //var td_text = td.innerHTML;  
+              //td.innerHTML = 'shaban';
+                flag = 1;
+              } else {
+                
+              }
+            }
+          }
+        if(flag==1){
+                   tr[i].style.display = "";
+        }else {
+           tr[i].style.display = "none";
+        }
+      }
+  }
+</script>
     
 </body>
 </html>

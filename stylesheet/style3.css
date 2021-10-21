@@ -1,5 +1,10 @@
 
   @import url(https://fonts.googleapis.com/css?family=Raleway:200,500,700,800);
+
+
+  html * {
+    font-family: 'Roboto', sans-serif !important;
+  }
   label, input {
     width: 70%;
     padding: 0.5rem;
@@ -9,7 +14,7 @@
   }
   label {
     text-align: right;
-    width: 30%;
+    width: 40%;
   }
   input {
     border: 2px solid white;
@@ -95,7 +100,79 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-}
+} 
+
+#container1 {
+  position:absolute;
+  width: 100%;
+  height: 5em;
+  left:20%;
+  top: 35%;
+  margin-left: -355px;
+  margin-top: -2.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+} 
+
+#container2{
+  position:absolute;
+  width: 100%;
+  height: 5em;
+  left:20%;
+  top: 50%;
+  margin-left: -355px;
+  margin-top: -2.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+} 
+
+#container3 {
+  position:absolute;
+  width: 100%;
+  height: 5em;
+  left:20%;
+  top: 65%;
+  margin-left: -355px;
+  margin-top: -2.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+} 
+
+#container4 {
+  position:absolute;
+  width: 100%;
+  height: 5em;
+  left:20%;
+  top: 80%;
+  margin-left: -355px;
+  margin-top: -2.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+} 
+
+#container5 {
+  position:absolute;
+  width: 100%;
+  height: 5em;
+  left:20%;
+  top: 95%;
+  margin-left: -355px;
+  margin-top: -2.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+} 
+
+
 
 .input {
   position: relative;
@@ -123,7 +200,7 @@ textarea {
   border: none;
   border-radius: 0;
   background: transparent;
-  color: white;
+  color: #17224D;
   font-size: 1.1em;
   
   -webkit-appearance: none;/* for box shadows to show on iOS */
@@ -149,7 +226,8 @@ textarea {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+  user-select: none; 
+  
 }
 
 .input__label-content {
@@ -242,5 +320,46 @@ textarea {
   color:#17224D;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-}
+} 
+
+#insert
+  {
+    border-radius: 20px;
+    background: #007FFF;
+    padding: 9px; 
+    width: 90px;
+    height: -30px;
+    color:white;
+    font-style:' Montserrat'; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    
+  } 
+  #insert2
+  {
+    border-radius: 20px;
+    background: #007FFF;
+    padding: 9px; 
+    width: 90px;
+    height: -30px;
+    color:white;
+    font-style:' Montserrat'; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer; 
+    position: absolute;
+    top:100%;
+    
+  }
 
