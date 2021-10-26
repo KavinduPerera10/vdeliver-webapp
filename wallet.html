@@ -233,7 +233,7 @@ function AddAllItemToTable(TheWallet){
   oderId=0;
   tbody.innerHTML="";
   TheWallet.forEach(element => {
-    AddItemToTable(element.DelID,element.amount);
+    AddItemToTable(element.DelID,element.amount,element.amount);
   }) ;
 }
  

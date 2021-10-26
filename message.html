@@ -74,7 +74,22 @@
       position: absolute;
       top: 10%;
       left: 70%;
-    }
+    } 
+    p12{
+      border-collapse: collapse;
+  width: 15%;
+  border: 2px solid black;
+  
+  font-size: 15px;
+        color: black;
+        position:absolute;
+        top:20%;
+        left:20%;
+        padding-left: 1.5%;
+        padding-top:0.5%;
+        padding-bottom: 0.5%; 
+        border-radius: 13px;
+    } 
   </style>
 </head>
 
@@ -92,48 +107,16 @@
     <li><a href=".\customers.html">Customers</a></li>
     <li><a href=".\newDeliveries.html">Add Orders</a></li>
   </ul>
-  <p1>Vehicle Status</p1>
-  <div class="square1">
-    <div class="content">
-      11<br><br>
-      All
-    </div>
-  </div>
-  <div class="square2">
-    <div class="content">
-      4<br><br>
-      Pending
-    </div>
-  </div>
-  <p2>Maintenance Status</p2>
-  <div class="square4">
-    <div class="content">
-      4<br><br>
-      Pending
-    </div>
-  </div>
-  <div class="square5">
-    <div class="content">
-     
-      4<br><br>
-      Completed
-    </div>
-  </div>
-
+  <a href=".\dashboard.html"><p12>Dashboard</p12> </a>
   <h1>Vehicles</h1>
   <div class="wrapper_all">
-    <input type="text" id="search_input" onkeyup="FilterkeyWord()" style="margin-bottom: 16px;"
-      placeholder="Vehicle Number" class="">
+    
     <table id="myTable" class="table">
       <thead>
         <tr>
-          <th>Vehicle Id</th>
-          <th>Vehicle Number</th>
-          <th>Type</td>
-          <th>Upgrades</th>
-          <th>Maintenance Status</th>
-          <th>Fuel consumption</th>
-          <th>Location</th>
+          <th></th>
+          <th>Message</th>
+          
         </tr>
       </thead>
       <tbody id="tbody1">
@@ -146,28 +129,20 @@
     var oderId = 0;
     var tbody = document.getElementById('tbody1');
 
-    function AddItemToTable(vehicleNumber, vehicleType, upgrades, maintenanceStatus, fuelconsumption) {
+    function AddItemToTable(vehicleNumber, vehicleType) {
       let trow = document.createElement("tr");
       let td1 = document.createElement('td');
       let td2 = document.createElement('td');
-      let td3 = document.createElement('td');
-      let td4 = document.createElement('td');
-      let td5 = document.createElement('td');
-      let td6 = document.createElement('td');
+      
 
       td1.innerHTML = ++oderId;
       td2.innerHTML = vehicleNumber;
-      td3.innerHTML = vehicleType;
-      td4.innerHTML = upgrades;
-      td5.innerHTML = maintenanceStatus;
-      td6.innerHTML = fuelconsumption;
+     
+      
 
       trow.appendChild(td1);
       trow.appendChild(td2);
-      trow.appendChild(td3);
-      trow.appendChild(td4);
-      trow.appendChild(td5);
-      trow.appendChild(td6);
+      
 
       tbody.appendChild(trow);
 
@@ -177,7 +152,8 @@
       oderId = 0;
       tbody.innerHTML = "";
       TheWallet.forEach(element => {
-        AddItemToTable(element.vehicleNumber, element.vehicleType, element.Upgrades, element.MaintenanceStatus, element.Fuelconsumption);
+          //--------*****---------------//
+        AddItemToTable(element.vehicleNumber);
       });
     }
 
@@ -210,6 +186,7 @@
 
     //---------------------Get all Data-----------//
     async function GetAllDataOnce() {
+        //------****----//
       const querySnapshot = await getDocs(collection(db, "VehicleDetails"));
 
       var delivery = [];
@@ -224,80 +201,6 @@
 
   </script>
 
-
-
-  <script>
-    //----------------------------- Specific column search script----------------//
-    function FilterkeyWord() {
-      // Declare variables
-      var input, filter, table, tr, td, i;
-      input = document.getElementById("search_input");
-      filter = input.value.toLowerCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
-
-      // Loop through all table rows, and hide those who don't match the search query
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        // change index to change your column search
-
-        if (td) {
-          if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
-
-
-
-    // -----------------------------All Columns search script----------------------------//
-    function FilterkeyWord_all_table() {
-
-      // Count td if you want to search on all table instead of specific column
-
-      count = $('.wrapper_all .table').children('tbody').children('tr:first-child').children('td').length;
-
-      // Declare variables
-      var input, filter, table, tr, td, i;
-      input = document.getElementById("search_input_all");
-      filter = input.value.toLowerCase();
-
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
-
-      // Loop through all table rows, and hide those who don't match the search query
-      for (i = 1; i < tr.length; i++) {
-
-        var flag = 0;
-        for (j = 0; j < count; j++) {
-          td = tr[i].getElementsByTagName("td")[j];
-          if (td) {
-            var td_text = td.innerHTML;
-            if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
-              //var td_text = td.innerHTML;  
-              //td.innerHTML = 'shaban';
-              flag = 1;
-            } else {
-
-            }
-          }
-        }
-        if (flag == 1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }
-    } 
-  </script>
-
-
-
-
- 
 
 </body>
 

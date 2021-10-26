@@ -90,6 +90,7 @@
         <tr>
           <th>Order Id</th>
           <th>Ref Id</td>
+          <th>Receiver Name</th>
           <th>Delivery Address</th>
           <th>Receiver Phone Number</th>
           <th>Pickup Address</th>
@@ -108,7 +109,7 @@
     var oderId = 0;
     var tbody = document.getElementById('tbody1');
 
-    function AddItemToTable(oderref,deliveryadd,  mobilenum,pickupadd,receiverphone) {
+    function AddItemToTable(oderref,receiver,deliveryadd,  mobilenum,pickupadd,receiverphone) {
       let trow = document.createElement("tr");
       let td1 = document.createElement('td');
       let td2 = document.createElement('td');
@@ -116,15 +117,17 @@
       let td4 = document.createElement('td');
       let td5 = document.createElement('td');
       let td6 = document.createElement('td');
+      let td7 = document.createElement('td');
       
 
 
       td1.innerHTML = ++oderId;
       td2.innerHTML = oderref;
-      td3.innerHTML = deliveryadd;
-      td4.innerHTML = receiverphone;
-      td5.innerHTML = pickupadd;
-      td6.innerHTML = mobilenum;
+      td3.innerHTML = receiver;
+      td4.innerHTML = deliveryadd;
+      td5.innerHTML = receiverphone;
+      td6.innerHTML = pickupadd;
+      td7.innerHTML = mobilenum;
 
       trow.appendChild(td1);
       trow.appendChild(td2);
@@ -132,6 +135,7 @@
       trow.appendChild(td4);
       trow.appendChild(td5);
       trow.appendChild(td6);
+      trow.appendChild(td7);
      
 
       tbody.appendChild(trow);
@@ -141,7 +145,7 @@
       oderId = 0;
       tbody.innerHTML = "";
       Delivery.forEach(element => {
-        AddItemToTable(element.oderref,element.deliveryadd,
+        AddItemToTable(element.oderref,element.receiver, element.deliveryadd,
           element.receiverphone, element.pickupadd, element.mobilenum);
       });
     }

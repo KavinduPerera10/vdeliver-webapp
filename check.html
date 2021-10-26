@@ -116,13 +116,13 @@
  
   <input type="text" id="search_input" onkeyup="FilterkeyWord()" style="margin-bottom: 16px;"
     placeholder="Reference Id" class="">
-   
+    <a href='https://www.google.com/maps/place'id='map-link'>Visit</a>
   <table id="myTable" class="table">
     <thead>
       <tr>
-        <th>Latitude </th>
-        <th>Longitude</th>
-        <th>View in Map</th>
+        <th>Location </th>
+        <th>latitude</th>
+        <th>longitude</th>
         
         
       </tr>
@@ -138,26 +138,26 @@
   //----Filling the Table-----//
   var oderId = 0;
   var tbody = document.getElementById('tbody1');
+  var latitude=latitude;
+  var longitude=longitude;
 
-
-  function AddItemToTable(oderref, cordinate) {
+  function AddItemToTable(oderref, latitude, longitude) {
     let trow = document.createElement("tr");
-
     let td1 = document.createElement('td');
-   
-    
+    let td2 = document.createElement('td');
+    let td3 = document.createElement('td');
 
 
-    //td1.innerHTML = ++oderId;
-    console.log("inside"+cordinate);
-    td1.innerHTML = cordinate;
-    
+    td1.innerHTML = ++oderId;
+    td2.innerHTML = latitude;
+    td3.innerHTML = longitude;
 
-    var a = document.getElementById('map-link'); 
-    a.href = "https://www.google.lk/maps/@"+longitude+","+latitude+",15.29z";
+    var a = document.getElementById('map-link'); //or grab it by tagname etc
+    a.href = "https://www.google.com/maps/place/"+longitude+"+"+latitude;
    
     trow.appendChild(td1);
-
+    trow.appendChild(td2);
+    trow.appendChild(td3);
     
     tbody.appendChild(trow);
   }
@@ -166,7 +166,7 @@
     oderId = 0;
     tbody.innerHTML = "";
     Delivery.forEach(element => {
-      AddItemToTable(element);
+      AddItemToTable( element.latitude, element.longitude );
     });
   }
 
@@ -204,8 +204,6 @@
   //------Getting all Data--------//
   function GetAllDataOnce() {
     const dbRef = ref(db);
-    var deliveryNest=[];
-    
 
     get(child(dbRef, 'Current Location'))
       .then((snapshot) => {
@@ -215,26 +213,8 @@
           delivery.push(childSnapshot.val());
           console.log(childSnapshot.val());
         });
-        delivery.push('https://www.google.lk/maps/@'+delivery[0]+","+delivery[1]+",21z");
-        
-        deliveryNest.push(delivery);
-        console.log(deliveryNest);
 
-        fetch=document.getElementById('myTable');
-
-        for(var i=0;i<deliveryNest.length;i++){
-          var newRow=fetch.insertRow(fetch.length);
-
-          for(var j=0; j<deliveryNest[i].length;j++){
-            var cell=newRow.insertCell(j);
-            cell.innerHTML=deliveryNest[i][j];
-            cell.href = "https://www.google.lk/maps/place/"+delivery[1]+"N+"+delivery[0]+"W";
-          }
-        }
-
-
-
-        //AddAllItemsToTable(delivery);
+        AddAllItemsToTable(delivery);
       });
   }
   //-------//
